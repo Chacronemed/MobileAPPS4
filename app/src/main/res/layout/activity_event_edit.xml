@@ -7,89 +7,99 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".EventEditActivity"
-    tools:openDrawer="start"
-    >
+    tools:openDrawer="start">
+
+    <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="16dp"
-        android:background="@color/white">
+        android:background="@color/background_color">
+
+        <!-- Event Name Label -->
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Name:"
-            android:fontFamily="@font/myfont"
+            android:fontFamily="@font/roboto"
             android:textSize="20sp"
             android:textAlignment="center"
             android:textColor="@color/black"/>
 
+        <!-- Event Name Input -->
         <EditText
             android:id="@+id/eventNameET"
             android:layout_below="@id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:ems="10"
-            android:inputType="text"/>
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:background="@drawable/input_background"
+            android:hint="Enter event name"/>
 
+        <!-- Event Date Label -->
         <TextView
             android:id="@+id/eventDateTV"
             android:layout_below="@id/eventNameET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Date"
-            android:fontFamily="@font/myfont"
+            android:fontFamily="@font/roboto"
             android:textSize="20sp"
             android:textAlignment="center"
             android:textColor="@color/black"/>
 
+        <!-- Event Time Label -->
         <TextView
             android:id="@+id/eventTimeTV"
             android:layout_below="@id/eventDateTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Time (click on me to change it):"
-            android:fontFamily="@font/myfont"
+            android:fontFamily="@font/roboto"
             android:textSize="20sp"
             android:textAlignment="center"
             android:textColor="@color/black"/>
+
+        <!-- Time Instruction Text -->
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/eventTimeTV"
-
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
             android:text="(click on Time to change it)"
             android:textColor="#BA7DC5"
-            android:textSize="14sp"
-        />
+            android:textSize="14sp"/>
 
-
+        <!-- Save Button -->
         <Button
-            android:layout_marginTop="20dp"
+            android:id="@+id/addEvent"
             android:layout_below="@id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
             android:text="Save"
-            android:fontFamily="@font/myfont"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/white"
-            app:backgroundTint="@color/my_primary"
-            android:background="@null"
+            android:background="@drawable/button_background"
             android:textStyle="bold"
             android:onClick="saveEventAction"
-            android:layout_gravity="center"
-            android:id="@+id/addEvent"
             android:textSize="20sp"/>
-
     </RelativeLayout>
+
+    <!-- Navigation View -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -97,5 +107,4 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
-
 </androidx.drawerlayout.widget.DrawerLayout>

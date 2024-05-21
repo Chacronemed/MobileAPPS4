@@ -10,19 +10,23 @@
     tools:context=".TasksActivity"
     tools:openDrawer="start">
 
+    <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:background="@color/white">
+        android:paddingVertical="16dp"
+        android:background="@color/background_color">
 
-        <!-- EditText -->
+        <!-- Search View -->
         <androidx.appcompat.widget.SearchView
-
             android:id="@+id/search_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search tasks..."
+            app:queryBackground="@drawable/input_background"
+            app:searchIcon="@drawable/ic_search"/>
 
         <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
@@ -31,10 +35,10 @@
             android:layout_height="0dp"
             android:layout_below="@id/search_view"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp" />
+            android:layout_margin="16dp"
+            android:background="@drawable/recycler_background"/>
 
-        <!-- FloatingActionButton -->
+        <!-- Floating Action Button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"
             android:layout_width="wrap_content"
@@ -42,11 +46,12 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
-            android:contentDescription="add task"
-            app:backgroundTint="@color/my_primary"
-            android:src="@android:drawable/ic_input_add" />
+            android:contentDescription="Add Task"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="@color/button_color"/>
     </RelativeLayout>
 
+    <!-- Navigation View -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

@@ -9,120 +9,192 @@
     android:fitsSystemWindows="true"
     tools:context=".WeekViewActivity"
     tools:openDrawer="start">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingVertical="16dp"
-    android:background="@color/white">
-    <!-- Contenu principal -->
-    <LinearLayout
+
+    <!-- Main Content -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:paddingVertical="16dp"
+        android:background="@color/background_color">
 
-        <!-- En-tête -->
+        <!-- Content -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <!-- Bouton précédent -->
-            <Button
-                android:layout_width="0dp"
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- Previous Button -->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/back"
+                    app:backgroundTint="@color/button_color"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="previousWeekAction"
+                    android:textSize="20sp"
+                    android:background="@drawable/button_background"/>
+
+                <!-- Month and Year -->
+                <TextView
+                    android:id="@+id/monthYearTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Feb 2021"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+
+                <!-- Next Button -->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/next"
+                    app:backgroundTint="@color/button_color"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="nextWeekAction"
+                    android:textSize="20sp"
+                    android:background="@drawable/button_background"/>
+            </LinearLayout>
+
+            <!-- Days of the Week -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Sunday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SUN"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Add TextViews for Monday to Saturday similarly -->
+
+                <!-- Monday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MON"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Tuesday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TUE"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Wednesday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="WED"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Thursday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="THU"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Friday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FRI"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+
+                <!-- Saturday -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SAT"
+                    android:textColor="@color/button_color"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <!-- RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/back"
-                app:backgroundTint="@color/my_primary"
-                android:fontFamily="@font/myfont"
-                android:textColor="@color/white"
-                android:background="@null"
-                android:textStyle="bold"
-                android:onClick="previousWeekAction"
-                android:textSize="20sp"/>
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/recycler_background"/>
 
-            <!-- Mois et année -->
-            <TextView
-                android:id="@+id/monthYearTV"
-                android:layout_width="0dp"
-                android:layout_weight="2"
+            <!-- New Event Button -->
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feb 2021"
-                android:fontFamily="@font/myfont"
+                android:text="New Event"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@color/button_color"
+                android:onClick="newEventAction"
+                android:layout_gravity="center"
                 android:textSize="20sp"
-                android:textAlignment="center"
-                android:textColor="@color/black"/>
+                android:background="@drawable/button_background"/>
 
-            <!-- Bouton suivant -->
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/next"
-                android:fontFamily="@font/myfont"
-                app:backgroundTint="@color/my_primary"
-                android:textColor="@color/white"
-                android:background="@null"
-                android:textStyle="bold"
-                android:onClick="nextWeekAction"
-                android:textSize="20sp"/>
-
+            <!-- Event List -->
+            <ListView
+                android:id="@+id/eventListView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:layout_marginHorizontal="16dp"/>
         </LinearLayout>
+    </RelativeLayout>
 
-        <!-- Jours de la semaine -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- Jour de la semaine (dimanche) -->
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="SUN"
-                android:textColor="@color/my_primary"
-                android:textAlignment="center"
-                android:fontFamily="@font/myfont"
-                android:textSize="16sp"/>
-
-            <!-- Jours de la semaine (lundi à samedi) -->
-            <!-- Ajoutez les TextView pour les autres jours de la semaine avec les mêmes attributs -->
-
-        </LinearLayout>
-
-        <!-- RecyclerView -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/calendarRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-
-        <!-- Bouton pour un nouvel événement -->
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Event"
-            android:fontFamily="@font/myfont"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:backgroundTint="@color/my_primary"
-            android:onClick="newEventAction"
-            android:layout_gravity="center"
-            android:textSize="20sp"/>
-
-        <!-- Liste des événements -->
-        <ListView
-            android:id="@+id/eventListView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"/>
-
-    </LinearLayout>
-</RelativeLayout>
-    <!-- Navbar (NavigationView) -->
-
+    <!-- Navigation View -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

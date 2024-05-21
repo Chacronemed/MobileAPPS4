@@ -10,5 +10,40 @@
     <string name="close_nav">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo_desc">App Logo</string>
+    <string name="welcome">Welcome</string>
+    <string name="login_instruction">Please login with your information</string>
+    <string name="email_address">Email Address</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forgot_password">I forgot my password</string>
+    <string name="login">Login</string>
+    <string name="or_login_with">Or Login with</string>
+    <string name="facebook_login">Login with Facebook</string>
+    <string name="github_login">Login with GitHub</string>
+    <string name="twitter_login">Login with Twitter</string>
 
+    <string name="register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="first_name_hint">Enter your first name</string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_hint">Enter your last name</string>
+    <string name="phone">Phone</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="swipe_to_access_menu">Swipe to access the menu</string>
+    <string name="update_profile">Update Profile</string>
+
+    <string name="task_name_hint">Enter the Task name</string>
+    <string name="description_hint">Description</string>
+    <string name="deadline_hint">Deadline</string>
+    <string name="select_image">Select Image</string>
+    <string name="add_task">Add Task</string>
+    <string name="image_desc">Image description</string>
+    <string name="title_text">Title</string>
+    <string name="description_text">Description</string>
+    <string name="deadline_text">Deadline</string>
+    <string name="update_button_desc">Update</string>
+    <string name="delete_button_desc">Delete</string>
 </resources>

@@ -10,28 +10,29 @@
     tools:context=".CalendarActivity"
     tools:openDrawer="start">
 
+    <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="16dp"
-        android:background="@color/white">
+        android:background="@color/background_color">
 
         <!-- Weekly Button centered -->
         <Button
             android:id="@+id/weekly_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weekly (Your events) "
-            android:fontFamily="@font/myfont"
+            android:text="Weekly (Your events)"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/white"
-            app:backgroundTint="@color/my_primary"
-            android:background="@null"
+            app:backgroundTint="@color/button_color"
             android:textStyle="bold"
             android:onClick="weeklyAction"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"/>
 
         <!-- Navigation Buttons and Month Year -->
         <LinearLayout
@@ -41,44 +42,48 @@
             android:orientation="horizontal"
             android:layout_below="@id/weekly_button"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="16dp">
 
+            <!-- Previous Button -->
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/back"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/my_primary"
-                android:background="@null"
+                app:backgroundTint="@color/button_color"
                 android:textStyle="bold"
                 android:onClick="previousMonthAction"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:background="@drawable/button_background"/>
 
+            <!-- Month and Year -->
             <TextView
                 android:id="@+id/monthYearTV"
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/myfont"
+                android:layout_weight="2"
+                android:fontFamily="@font/roboto"
                 android:text="Feb 2021"
                 android:textSize="20sp"
                 android:textAlignment="center"
                 android:textColor="@color/black"/>
 
+            <!-- Next Button -->
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/my_primary"
-                android:background="@null"
+                app:backgroundTint="@color/button_color"
                 android:textStyle="bold"
                 android:onClick="nextMonthAction"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:background="@drawable/button_background"/>
         </LinearLayout>
 
         <!-- Days of the Week -->
@@ -87,16 +92,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/first"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="SUN"
-                android:textColor="@color/my_primary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -104,9 +111,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="MON"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -114,9 +121,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="TUE"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -124,9 +131,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="WED"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -134,9 +141,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="THUR"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -144,9 +151,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="FRI"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
 
             <TextView
@@ -154,18 +161,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="SAT"
-                android:textColor="@color/my_secondary"
+                android:textColor="@color/button_color"
                 android:textAlignment="center"
-                android:fontFamily="@font/myfont"
+                android:fontFamily="@font/roboto"
                 android:textSize="16sp"/>
         </LinearLayout>
 
         <!-- RecyclerView for Calendar -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecyclerView"
-            android:layout_below="@id/second"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_below="@id/second"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/recycler_background"/>
     </RelativeLayout>
 
     <!-- NavigationView for drawer menu -->
